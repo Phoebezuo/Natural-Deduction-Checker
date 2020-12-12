@@ -1,0 +1,245 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+@font-face {
+  font-family: "FiraCodeFixed";
+  src: url("FiraCodeFixed-Regular.ttf"); }
+.no-display {
+  display: none; }
+
+html, body, #elm-app, #main {
+  width: 100%;
+  height: auto; }
+
+body {
+  color: #465a60; }
+
+#menu {
+  display: inline-block;
+  height: 4em;
+  line-height: 4em;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #465a60;
+  color: #fff;
+  text-align: left;
+  white-space: nowrap;
+  /* prevent text selection */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome and Opera */ }
+  #menu .menu-button {
+    height: inherit;
+    line-height: inherit;
+    width: 15%;
+    min-width: 5em;
+    transition: background-color .5s;
+    display: inline-block;
+    text-align: center; }
+    #menu .menu-button:hover {
+      background-color: #42c5f4;
+      cursor: pointer; }
+  #menu #import-export-window-button {
+    min-width: 7em; }
+  #menu .disabled {
+    opacity: 0.5 ∀x F(a) →G(a); }
+    #menu .disabled:hover {
+      background-color: inherit;
+      cursor: default; }
+
+table {
+  border-collapse: collapse;
+  width: 100%; }
+
+th {
+  font-family: inherit !important;
+  font-size: .8em;
+  background-color: #f9f6e3;
+  white-space: nowrap; }
+
+tr {
+  width: 100%;
+  text-align: center;
+  line-height: 2em;
+  height: 2em; }
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  text-align: inherit; }
+
+#proof-box {
+  margin: 5em 5%;
+  margin-bottom: 0;
+  width: 90%;
+  z-index: 1; }
+  #proof-box tr {
+    border-bottom: 1px solid rgba(70, 90, 96, 0.5);
+    width: 100%;
+    font-size: 1.2em; }
+    #proof-box tr td {
+      font-family: 'FiraCodeFixed', monospace; }
+  #proof-box .assumptions, #proof-box .line-number {
+    width: 10%;
+    display: inline-block; }
+    #proof-box .assumptions input, #proof-box .line-number input {
+      color: inherit;
+      width: 80%; }
+  #proof-box .formula {
+    width: 50%;
+    display: inline-block; }
+    #proof-box .formula input {
+      color: inherit;
+      width: 80%; }
+  #proof-box .reason {
+    width: 30%;
+    display: inline-block; }
+    #proof-box .reason input {
+      color: inherit;
+      width: 20%; }
+  #proof-box #reason-dropdown {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    display: inline-block;
+    width: 14%;
+    margin: 3%; }
+  #proof-box #input-dropdown {
+    font-family: inherit;
+    display: inline-block;
+    width: 44%;
+    height: auto;
+    margin: 0 3%; }
+    #proof-box #input-dropdown select {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      width: 100%; }
+  #proof-box #reference-input {
+    text-align: left; }
+  #proof-box .short {
+    display: none !important; }
+  #proof-box .long {
+    width: 70% !important; }
+
+#add-line {
+  color: #fff;
+  background-color: #465a60;
+  padding: 1em;
+  margin-top: 1em;
+  font-size: .8em;
+  transition: background-color 1s;
+  float: right;
+  font-size: 1em; }
+  #add-line:hover {
+    cursor: pointer;
+    background-color: #42c5f4; }
+
+#error {
+  display: block;
+  position: fixed;
+  line-height: 3em;
+  bottom: 0;
+  width: 100%;
+  background-color: #cc516a;
+  text-align: center;
+  color: #fff; }
+
+.floating {
+  top: 4em;
+  display: block;
+  position: fixed;
+  width: 70%;
+  max-width: 40em;
+  background-color: #465a60;
+  border-top: 0.2em solid #f9f6e3;
+  color: #fff; }
+  .floating .button {
+    width: 100%;
+    background-color: #465a60;
+    color: #fff;
+    border: none;
+    border-bottom: 0.2em solid #f9f6e3;
+    height: 3em;
+    line-height: 3em;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color .5s; }
+    .floating .button:hover {
+      background-color: #42c5f4;
+      cursor: pointer; }
+  .floating input {
+    color: #465a60; }
+  .floating select {
+    font-size: inherit;
+    color: #465a60; }
+  .floating tr, .floating td {
+    font-size: inherit;
+    font-family: inherit; }
+
+#symbol-box {
+  left: 15%; }
+  #symbol-box #symbol-list {
+    width: 100%;
+    font-family: 'FiraCodeFixed', monospace;
+    font-size: 1.2em; }
+    #symbol-box #symbol-list .symbol-name {
+      text-align: right;
+      width: 20%; }
+    #symbol-box #symbol-list .equiv-symbol {
+      width: 5%;
+      text-align: center; }
+    #symbol-box #symbol-list .symbol-def {
+      text-align: left;
+      width: 50%; }
+  #symbol-box #new-symbol {
+    border-bottom: 0.2em solid #f9f6e3;
+    line-height: 3em;
+    height: 3em; }
+  #symbol-box #choose-name {
+    margin: .5em;
+    width: 2em; }
+  #symbol-box #set-def {
+    width: 80%; }
+  #symbol-box #alias-select {
+    font-family: 'FiraCodeFixed', monospace;
+    font-size: 1.2em; }
+
+#sequent-box {
+  left: 20%; }
+  #sequent-box #sequent-list {
+    width: 100%;
+    font-family: 'FiraCodeFixed', monospace;
+    font-size: 1.2em; }
+  #sequent-box #new-sequent {
+    border-bottom: 0.2em solid #f9f6e3;
+    line-height: 3em;
+    height: 3em; }
+
+#import-export-box {
+  left: 25%; }
+  #import-export-box #json-input {
+    width: 100%;
+    font-size: 1em;
+    border-bottom: 0.2em solid #f9f6e3;
+    padding: 1em; }
+  #import-export-box #json-output {
+    width: 100%;
+    font-size: 1em;
+    border-bottom: 0.2em solid #f9f6e3;
+    padding: 1em; }
+    #import-export-box #json-output a {
+      color: inherit;
+      text-decoration: underline; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@font-face {
+    font-family: "FiraCodeFixed";
+    src: url("FiraCodeFixed-Regular.ttf");
+}
+
+@function light-grey($opacity:1) {
+    @return rgba(249, 246, 227, $opacity)
+};
+
+@function medium-blue($opacity:1) {
+    @return rgba(66, 197, 244, $opacity)
+};
+
+@function dark-grey($opacity:1) {
+    @return rgba(70, 90, 96, $opacity)
+};
+
+$white: #fff;
+
+.no-display {
+    display: none;
+}
+
+html, body, #elm-app, #main {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    color: dark-grey();
+}
+
+#menu {
+    display: inline-block;
+    height: 4em;
+    line-height: 4em;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: dark-grey();
+    color: $white;
+    text-align: left;
+    white-space: nowrap;
+
+    /* prevent text selection */
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+
+    .menu-button {
+        height: inherit;
+        line-height: inherit;
+        width: 15%;
+        min-width: 5em;
+        transition: background-color .5s;
+        display: inline-block;
+        text-align: center;
+
+        &:hover {
+            background-color: medium-blue();
+            cursor: pointer;
+        }
+    }
+
+    #import-export-window-button {
+        min-width: 7em;
+    }
+
+    .disabled {
+        opacity: .5(∀x)(F(a)→G(a));
+
+        &:hover {
+            background-color: inherit;
+            cursor: default;
+        }
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    font-family: inherit!important;
+    font-size: .8em;
+    background-color: light-grey();
+    white-space: nowrap;
+}
+
+tr {
+    width: 100%;
+    text-align: center;
+    line-height: 2em;
+    height: 2em;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
+}
+
+#proof-box {
+    margin: 5em 5%;
+    margin-bottom: 0;
+    width: 90%;
+    z-index: 1;
+
+    tr {
+        border-bottom: 1px solid dark-grey(.5);
+        width: 100%;
+        font-size: 1.2em;
+        td {
+            font-family: 'FiraCodeFixed', monospace;
+        }
+    }
+
+    .assumptions, .line-number {
+        width: 10%;
+        display: inline-block;
+
+        input {
+            color: inherit;
+            width: 80%;
+        }
+    }
+
+    .formula {
+        width: 50%;
+        display: inline-block;
+
+        input {
+            color: inherit;
+            width: 80%;
+        }
+    }
+
+    .reason {
+        width: 30%;
+        display: inline-block;
+
+        input {
+            color: inherit;
+            width: 20%;
+        }
+    }
+
+    #reason-dropdown {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        display: inline-block;
+        width: 14%;
+        margin: 3%;
+    }
+
+    #input-dropdown {
+        font-family: inherit;
+        display: inline-block;
+        width: 44%;
+        height: auto;
+        margin: 0 3%;
+
+        select {
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+            width: 100%;
+        }
+    }
+
+    #reference-input {
+        text-align: left;
+    }
+
+    .short {
+        display: none!important;
+    }
+
+    .long {
+        width: 70%!important;
+    }
+}
+
+#add-line {
+    color: $white;
+    background-color: dark-grey();
+    padding: 1em;
+    margin-top: 1em;
+    font-size: .8em;
+    transition: background-color 1s;
+    float: right;
+    font-size: 1em;
+
+    &:hover {
+        cursor: pointer;
+        background-color: medium-blue();
+    }
+}
+
+#error {
+    display: block;
+    position: fixed;
+    line-height: 3em;
+    bottom: 0;
+    // height: 3em;
+    width: 100%;
+    background-color: rgb(204, 81, 106);
+    text-align: center;
+    color: $white;
+}
+
+.floating {
+    top: 4em;
+    display: block;
+    position: fixed;
+    width: 70%;
+    max-width: 40em;
+    background-color: dark-grey();
+    border-top: .2em solid light-grey();
+    color: $white;
+
+    .button {
+        width: 100%;
+        background-color: dark-grey();
+        color: $white;
+        border: none;
+        border-bottom: .2em solid light-grey();
+        height: 3em;
+        line-height: 3em;
+        font-size: 1em;
+        text-align: center;
+        transition: background-color .5s;
+
+        &:hover {
+            background-color: medium-blue();
+            cursor: pointer;
+        }
+    }
+
+    input {
+        color: dark-grey();
+    }
+
+    select {
+        font-size: inherit;
+        color: dark-grey();
+    }
+
+    tr, td {
+        font-size: inherit;
+        font-family: inherit;
+    }
+}
+
+#symbol-box {
+    left: 15%;
+
+    #symbol-list {
+        width: 100%;
+        font-family: 'FiraCodeFixed', monospace;
+        font-size: 1.2em;
+
+        .symbol-name {
+            text-align: right;
+            width: 20%;
+        }
+
+        .equiv-symbol {
+            width: 5%;
+            text-align: center;
+        }
+
+        .symbol-def {
+            text-align: left;
+            width : 50%;
+        }
+    }
+
+    #new-symbol {
+        border-bottom: .2em solid light-grey();
+        line-height: 3em;
+        height: 3em;
+    }
+
+    #choose-name {
+        margin: .5em;
+        width: 2em;
+    }
+
+    #set-def {
+        width: 80%;
+    }
+
+    #alias-select {
+        font-family: 'FiraCodeFixed', monospace;
+        font-size: 1.2em;
+    }
+}
+
+#sequent-box {
+    left: 20%;
+
+    #sequent-list {
+        width: 100%;
+        font-family: 'FiraCodeFixed', monospace;
+        font-size: 1.2em;
+    }
+
+    #new-sequent {
+        border-bottom: .2em solid light-grey();
+        line-height: 3em;
+        height: 3em;
+    }
+}
+
+#import-export-box {
+    left: 25%;
+
+    #json-input {
+        width: 100%;
+        font-size: 1em;
+        border-bottom: .2em solid light-grey();
+        padding: 1em;
+    }
+
+    #json-output {
+        width: 100%;
+        font-size: 1em;
+        border-bottom: .2em solid light-grey();
+        padding: 1em;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+}
